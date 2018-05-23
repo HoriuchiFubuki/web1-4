@@ -5,7 +5,7 @@ using UnityEngine;
 public class RouletteController : MonoBehaviour {
 
     float rotSpeed = 0;
-    int i = 0;
+    bool slot = false;
 	// Use this for initialization
 	void Start () {
         
@@ -16,13 +16,13 @@ public class RouletteController : MonoBehaviour {
         
         if (Input.GetMouseButtonDown(0))
         {
-            i = 1;   
+            slot = true;   
         }
-        if (i == 1)
+        if (slot)
         {
             this.rotSpeed += 1;
             if (this.rotSpeed > 50)
-                i = 0;
+                slot = false;
         }
         else
         {
